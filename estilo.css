@@ -12,3 +12,7 @@
     width: 70px;
     height: 70px;
 }
+
+.ladoB{
+    transform: scaleX(-1);
+}
