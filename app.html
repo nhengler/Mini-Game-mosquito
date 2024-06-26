@@ -8,7 +8,11 @@
     <link rel = "stylesheet" href="estilo.css">
 </head>
 <body onresize="ajusteDeTamanho()"> <!--a função foi chamada para que as informações do tamanho se atualizem em tempo real-->
-    <script> posicaoRandomica() </script>
+    <script>  
+        setInterval(function(){
+            posicaoRandomica()
+        }, 1000) //um novo mosquito aparece a cada 1000ms (1 segundo)
+    </script>
     
 </body>
 
