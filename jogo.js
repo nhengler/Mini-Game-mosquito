@@ -15,7 +15,10 @@ ajusteDeTamanho()
 function posicaoRandomica(){
     if(document.getElementById('mosquito')){
         document.getElementById('mosquito').remove()
+        document.getElementById('v1').src = "imagens/coracao_vazio.png"
+        
     }
+    
     var larguraX = Math.floor(Math.random() * largura)
     var alturaY = Math.floor(Math.random() * altura)
     console.log(larguraX, alturaY)
@@ -28,6 +31,9 @@ function posicaoRandomica(){
     mosquito.style.top = alturaY + 'px'
     mosquito.style.position = 'absolute' //necessário para que as posições seja aplicadas
     mosquito.id = 'mosquito'
+    mosquito.onclick = function(){
+        this.remove()
+    }
     document.body.appendChild(mosquito)
 }
 
