@@ -1,5 +1,6 @@
 var altura = 0;
 var largura = 0;
+var vidas = 1;
 
 /* A função foi criada para mostrar no console a alteração em tempo real do tamanho
 da tela onde o jogo irá rodar*/
@@ -15,10 +16,15 @@ ajusteDeTamanho()
 function posicaoRandomica(){
     if(document.getElementById('mosquito')){
         document.getElementById('mosquito').remove()
-        document.getElementById('v1').src = "imagens/coracao_vazio.png"
         
+        if(vidas > 3){
+         alert('game over')
+        }   else    {
+        document.getElementById('v' + vidas).src = "imagens/coracao_vazio.png"
+        vidas++
+        }
     }
-    
+
     var larguraX = Math.floor(Math.random() * largura)
     var alturaY = Math.floor(Math.random() * altura)
     console.log(larguraX, alturaY)
