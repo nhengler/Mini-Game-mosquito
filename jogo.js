@@ -1,6 +1,7 @@
 var altura = 0;
 var largura = 0;
 var vidas = 1;
+var tempo = 10;
 
 /* A função foi criada para mostrar no console a alteração em tempo real do tamanho
 da tela onde o jogo irá rodar*/
@@ -12,7 +13,13 @@ function ajusteDeTamanho(){
 
 ajusteDeTamanho()
 
-/* este trecho gera posições aletórias para o mosquito no game */
+//função que manipula um span do HTML pelo DOM para reduzir os segundos de jogo
+var cronometro = setInterval(function(){
+    tempo -= 1
+    document.getElementById('cronometro').innerHTML = tempo 
+}, 1000)
+
+// este trecho gera posições aletórias para o mosquito no game
 function posicaoRandomica(){
     if(document.getElementById('mosquito')){
         document.getElementById('mosquito').remove()
@@ -43,7 +50,7 @@ function posicaoRandomica(){
     document.body.appendChild(mosquito)
 }
 
-/* função para mudar o tamanho do mosquito*/
+//função para mudar o tamanho do mosquito
 function tamanhoMosquito(){ 
     var classe = Math.floor(Math.random() * 3)
     switch(classe){
@@ -57,7 +64,7 @@ function tamanhoMosquito(){
             return 'mosquito3'
     }
 }
-/* função para o mosquito inverter de lado*/
+// função para o mosquito inverter de lado
 function ladoMosquito(){
     var classe = Math.floor(Math.random() * 2)
     switch(classe){

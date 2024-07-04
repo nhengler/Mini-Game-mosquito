@@ -16,16 +16,16 @@
         </div>
         
         <div class="cronometro">
-            Tempo restante:
+            Tempo restante: <span id = "cronometro"></span>
         </div>
     </div>
 
-    
-    
     <script>  
+        document.getElementById('cronometro').innerHTML = tempo
+        
         setInterval(function(){
             posicaoRandomica()
-        }, 1000) //um novo mosquito aparece a cada 1000ms (1 segundo)
+        }, 1500) //um novo mosquito aparece a cada 1500ms (1,5 segundos)
     </script>
     
 </body>
