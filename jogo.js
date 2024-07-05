@@ -19,7 +19,7 @@ var cronometro = setInterval(function(){
     if(tempo < 0){
         clearInterval(criaMosca) 
         clearInterval(cronometro) //esse comando interrompe o funcionamento do setInterval, parando a contagem
-        alert('VITORIA')
+        window.location.href = 'vitoria.html'
     } else {
     document.getElementById('cronometro').innerHTML = tempo 
     }
