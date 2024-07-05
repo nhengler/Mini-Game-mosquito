@@ -16,7 +16,13 @@ ajusteDeTamanho()
 //função que manipula um span do HTML pelo DOM para reduzir os segundos de jogo
 var cronometro = setInterval(function(){
     tempo -= 1
+    if(tempo < 0){
+        clearInterval(criaMosca) 
+        clearInterval(cronometro) //esse comando interrompe o funcionamento do setInterval, parando a contagem
+        alert('VITORIA')
+    } else {
     document.getElementById('cronometro').innerHTML = tempo 
+    }
 }, 1000)
 
 // este trecho gera posições aletórias para o mosquito no game
@@ -64,6 +70,7 @@ function tamanhoMosquito(){
             return 'mosquito3'
     }
 }
+
 // função para o mosquito inverter de lado
 function ladoMosquito(){
     var classe = Math.floor(Math.random() * 2)

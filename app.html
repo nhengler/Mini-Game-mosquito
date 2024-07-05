@@ -20,10 +20,11 @@
         </div>
     </div>
 
+    <!-- é necessário incluir esse trecho de código aqui no HTML também, pois tanto a variável TEMPO quanto a CRONOMETRO
+     precisam ser interpretadas aqui antes de serem interpretadas no JS-->
     <script>  
         document.getElementById('cronometro').innerHTML = tempo
-        
-        setInterval(function(){
+        var criaMosca = setInterval(function(){
             posicaoRandomica()
         }, 1500) //um novo mosquito aparece a cada 1500ms (1,5 segundos)
     </script>
