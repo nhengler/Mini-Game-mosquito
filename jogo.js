@@ -42,7 +42,6 @@ function posicaoRandomica(){
     var alturaY = Math.floor(Math.random() * altura)
     console.log(larguraX, alturaY)
 
-//manipulação do HTML pelo DOM
     var mosquito = document.createElement('img')
     mosquito.src = 'imagens/mosca.png'
     mosquito.className = tamanhoMosquito() + ' ' + ladoMosquito() //aplicação do estilo criado em CSS
